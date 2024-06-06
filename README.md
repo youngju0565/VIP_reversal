@@ -15,7 +15,7 @@ Jee Hyun Yi1,4, Young Ju Yoon1,4, Huijeong Jeong3, Seo Yeon Choe1, Min Whan Jung
 MATLAB version: R2017a
 *****
 ### MATLAB path setting
-Make sure that <code>/functions</code> folder and data in <code>/data_VIP_CC<code> folder are on the MATLAB path.
+Make sure that <code>/functions</code> folder and data in <code>/data_VIP_CC</code> folder are on the MATLAB path.
 
 *****
 ### Required MATLAB functions

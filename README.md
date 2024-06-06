@@ -21,13 +21,13 @@ MATLAB version: R2017a
 Each analysis takes a time scale of minutes.
 *****
 ### MATLAB path setting
-Make sure that <code>/functions</code> folder and data in <code>/data_VIP_CC</code> folder are on the MATLAB path.
+Make sure that "/functions" folder and data in "/data_VIP_CC" folder are on the MATLAB path.
 
 No additional installations are required to run the code on the data.
 
 *****
 ### Required MATLAB functions
-Functions included in the <code>/functions</code> folder:
+Functions included in the "/functions" folder:
 1. <code>othercolor</code> (Joshua Atkins (2011))
 2. <code>cbrewer</code> (Charles Robert (2011))
 3. <code>stateTime_zerofil</code>

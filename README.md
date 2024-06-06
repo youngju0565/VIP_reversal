@@ -3,17 +3,17 @@
 Codes for analysis and making figures for the manuscript "Selective engagement of prefrontal VIP neurons in reversal learning".
 
 ## Authors
-Jee Hyun Yi^1^,^4, Young Ju Yoon^1^,^4, Huijeong Jeong^3, Seo Yeon Choe^1, Min Whan Jung^1^,^2^,^5*
+Jee Hyun Yi1,4, Young Ju Yoon1,4, Huijeong Jeong3, Seo Yeon Choe1, Min Whan Jung1,2,5*
 
-^1Center for Synaptic Brain Dysfunctions, Institute for Basic Science, Daejeon 34141, Korea
+1 Center for Synaptic Brain Dysfunctions, Institute for Basic Science, Daejeon 34141, Korea
 
-^2Department of Biological Sciences, Korea Advanced Institute of Science and Technology, Daejeon 34141, Korea
+2 Department of Biological Sciences, Korea Advanced Institute of Science and Technology, Daejeon 34141, Korea
 
-^3Department of Neurology, University of California, San Francisco, CA 94158, USA.
+3 Department of Neurology, University of California, San Francisco, CA 94158, USA.
 
-^4These authors contributed equally to this work.
+4 These authors contributed equally to this work.
 
-^5Lead contact *Correspondence: mwjung@kaist.ac.kr
+5 Lead contact *Correspondence: mwjung@kaist.ac.kr
 
 ## Code description
 MATLAB version: R2017a

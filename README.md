@@ -17,6 +17,8 @@ Jee Hyun Yi1,4, Young Ju Yoon1,4, Huijeong Jeong3, Seo Yeon Choe1, Min Whan Jung
 
 ## Code description
 MATLAB version: R2017a
+
+Each analysis takes a time scale of minutes.
 *****
 ### MATLAB path setting
 Make sure that <code>/functions</code> folder and data in <code>/data_VIP_CC</code> folder are on the MATLAB path.
@@ -36,5 +38,6 @@ The ANCCR package (https://github.com/namboodirilab/ANCCR) is also required. (no
 *****
 ### Behavioral and neural data
 The data that support the findings of this study are available from the corresponding author upon reasonable request.
+
 
 https://github.com/youngju0565/VIP_reversal

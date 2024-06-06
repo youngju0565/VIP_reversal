@@ -23,17 +23,19 @@ Each analysis takes a time scale of minutes.
 ### MATLAB path setting
 Make sure that <code>/functions</code> folder and data in <code>/data_VIP_CC</code> folder are on the MATLAB path.
 
+No additional installations are required to run the code on the data.
+
 *****
 ### Required MATLAB functions
 Functions included in the <code>/functions</code> folder:
-1. othercolor (Joshua Atkins (2011))
-2. cbrewer (Charles Robert (2011))
-3. stateTime_zerofil
-4. recorded_trial_types
-5. behmat2eventlog
-6. fun_ANCCR_3var_Ras
+1. <code>othercolor</code> (Joshua Atkins (2011))
+2. <code>cbrewer</code> (Charles Robert (2011))
+3. <code>stateTime_zerofil</code>
+4. <code>recorded_trial_types</code>
+5. <code>behmat2eventlog</code>
+6. <code>fun_ANCCR_3var_Ras</code>
 
-The ANCCR package (https://github.com/namboodirilab/ANCCR) is also required. (not included in this repository)
+ANCCR (https://github.com/namboodirilab/ANCCR) and CNMF-E (https://github.com/zhoupc/CNMF_E) packages are also required. (not included in this repository) (include them on your MATLAB path)
 
 *****
 ### Behavioral and neural data

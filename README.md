@@ -19,16 +19,15 @@ Make sure that <code>/functions</code> folder and data in <code>/data_VIP_CC</co
 
 *****
 ### Required MATLAB functions
+Functions included in the <code>/functions</code> folder:
 1. othercolor (Joshua Atkins (2011))
 2. cbrewer (Charles Robert (2011))
 3. stateTime_zerofil
 4. recorded_trial_types
 5. behmat2eventlog
 6. fun_ANCCR_3var_Ras
-(included in the <code>/functions</code> folder)
 
-Also, the ANCCR package (https://github.com/namboodirilab/ANCCR) is required. (not included in this repository)
-
+The ANCCR package (https://github.com/namboodirilab/ANCCR) is also required. (not included in this repository)
 
 
 https://github.com/youngju0565/VIP_reversal

@@ -153,39 +153,37 @@ for i = 1:ses_num
     unexp_first = min([unexp_pun unexp_rwd]);
     unexp_set = [unexp_first unexp_rwd unexp_pun];
     
-    for ibef = 1:27
-        for irev = 1:length(unexp_set)
-            id_set = cell(length(type_id_set),1);
-            temp_norm_id = cell(1,length(type_id_set));
-            for itype = 1:length(type_id_set)
-                temp_type_id = type_id_set{itype};
-                temp_id_bef = find(trial_idx_rec'<idenrev_trial & temp_type_id,trial_num,'last');
-                temp_id_dur = find(trial_idx_rec'>unexp_set(irev) & temp_type_id,trial_num); % ¡ˆ≥≠ »ƒ¥œ±Ó µÓ»£ ªË¡¶
-                temp_id_af = find(temp_type_id & after_rev',trial_num);
+    for irev = 1:length(unexp_set)
+        id_set = cell(length(type_id_set),1);
+        temp_norm_id = cell(1,length(type_id_set));
+        for itype = 1:length(type_id_set)
+            temp_type_id = type_id_set{itype};
+            temp_id_bef = find(trial_idx_rec'<idenrev_trial & temp_type_id,trial_num,'last');
+            temp_id_dur = find(trial_idx_rec'>unexp_set(irev) & temp_type_id,trial_num); % √Å√∂¬≥¬≠ √à√Ñ¬¥√è¬±√Æ ¬µ√Æ√à¬£ ¬ª√®√Å¬¶
+            temp_id_af = find(temp_type_id & after_rev',trial_num);
                 
-                id_set{itype} = [temp_id_bef; temp_id_dur; temp_id_af];
-                temp_norm_id{itype} = find(id_csrev & before_rev');
-            end
+            id_set{itype} = [temp_id_bef; temp_id_dur; temp_id_af];
+            temp_norm_id{itype} = find(id_csrev & before_rev');
+        end
             
-            for itype = 1:length(type_id_set)
-                temp_id_before_norm = temp_norm_id{itype};
-                temp_id = id_set{itype};
-                temp_delay_bar = nan(neuron_num,trial_num*3);
-                for icell = 1:neuron_num
-                    % for each neuron
-                    temp_C_raw = C_raw(neuron_id(icell),:);
+        for itype = 1:length(type_id_set)
+            temp_id_before_norm = temp_norm_id{itype};
+            temp_id = id_set{itype};
+            temp_delay_bar = nan(neuron_num,trial_num*3);
+            for icell = 1:neuron_num
+                % for each neuron
+                temp_C_raw = C_raw(neuron_id(icell),:);
                     
-                    trial_delay = nan(length(trial_idx_rec),1);
-                    for itrial = 1:length(trial_idx_rec)
-                        trial_delay(itrial) = mean(temp_C_raw(state_frame_num_rec(itrial,3):state_frame_num_rec(itrial,3)+1.5*30));
-                    end
-                    
-                    trial_delay_z = (trial_delay - mean(trial_delay(temp_id_before_norm)))/std(trial_delay(temp_id_before_norm));
-                    
-                    temp_delay_bar(icell,:) = trial_delay_z(temp_id,:)';
+                trial_delay = nan(length(trial_idx_rec),1);
+                for itrial = 1:length(trial_idx_rec)
+                    trial_delay(itrial) = mean(temp_C_raw(state_frame_num_rec(itrial,3):state_frame_num_rec(itrial,3)+1.5*30));
                 end
-                delay_bar_set{itype,i,irev} = temp_delay_bar;
+                    
+                trial_delay_z = (trial_delay - mean(trial_delay(temp_id_before_norm)))/std(trial_delay(temp_id_before_norm));
+                    
+                temp_delay_bar(icell,:) = trial_delay_z(temp_id,:)';
             end
+            delay_bar_set{itype,i,irev} = temp_delay_bar;
         end
     end
 end
@@ -225,19 +223,6 @@ for ianimal = 1:length(animal_id_set)
     x_plot_label = [-trial_num_fig:-1 1:trial_num_fig];
     x_plot_data = ismember(x_plot_val,x_plot_label);
     temp_bar_data_set = temp_bar_data_set(:,x_plot_data);
-    
-    if ianimal == 1 && ibef==9
-        x_idx = find(x_plot_data);
-        x_idx = x_idx(5);
-        all_animal_first_set{1} = temp_bar_data_set1(:,x_idx);
-        all_animal_first_set{2} = temp_bar_data_set2(:,x_idx);
-    end
-    if ianimal == 2
-        divided_animal_first_set{1} = temp_bar_data_set(:,5);
-    end
-    if ianimal == 3
-        divided_animal_first_set{2} = temp_bar_data_set(:,5);
-    end
     
     e1 = errorbar(x_plot,mean(temp_bar_data_set),std(temp_bar_data_set,[],1)/sqrt(size(temp_bar_data_set,1)));
     e1.Color = temp_cmap(1,:); e1.CapSize = 0; e1.LineStyle = 'none';
